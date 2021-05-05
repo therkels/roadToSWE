@@ -1,5 +1,5 @@
 import unittest
-import ArraysAndStrings as aas
+from app.src import ArraysAndStrings as aas
 
 
 class Test(unittest.TestCase):
@@ -25,3 +25,11 @@ class Test(unittest.TestCase):
     def test_URLify(self):
         test_str = "Mr John Smith    "
         test_count = 13
+
+    def test_palindrome(self):
+        test_str = "tact coa"
+        self.assertTrue(aas.is_palindrome(test_str))
+        test_str = "ascda"
+        self.assertFalse(aas.is_palindrome(test_str))
+        test_str = "as"
+        self.assertFalse(aas.is_palindrome(test_str))

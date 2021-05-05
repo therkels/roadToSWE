@@ -2,8 +2,8 @@
     "python.pythonPath": "C:\\Python\\python.exe",
     "python.testing.unittestArgs": [
         "-v",
-        "-s",
-        "./Python/ArraysAndStrings/",
+        "-s test",
+        "./Python/test",
         "-p",
         "*test*.py"
     ],

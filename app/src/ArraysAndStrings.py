@@ -55,3 +55,30 @@ def URLify(string, length):
             new_index -= 1
 
     return string
+
+def is_palindrome(string):
+    #check string length
+    string_len = len(string)
+    
+    if string_len < 3:
+        return False
+    #build a frequency dictionary
+    freq_dict = dict()
+    for char in string:
+        char = char.lower()
+        if char == ' ':
+            continue
+        if char not in freq_dict:
+            freq_dict[char] = 1
+        else:
+            freq_dict[char] += 1
+        print(freq_dict)
+    #build odd and evens
+    odd_even = {"odd": 0, "even": 0}
+    for item in freq_dict.keys():
+        if freq_dict[item] % 2 == 0:
+            odd_even["even"] += 1
+        else:
+            odd_even["odd"] += 1
+
+    return odd_even["odd"] <= 1
