@@ -96,9 +96,32 @@ def is_one_away(string_tup):
     for char in string_tup[1]:
         set_2.add(char)
     
-    print(set_1 ^ set_2)
     return len(set_1 ^ set_2)//2 < 2
 
 
-print(is_one_away(("ale","bale")))
+def compress_string(string):
+    ret_str_arr = []
+    ret_str = ""
+    max_count = 0
+    i = 0
+    while i < len(string):
+        local_count = 1
+        curr_letter = string[i]
+        while i+1 < len(string) and string[i+1] == curr_letter:
+            local_count += 1
+            i += 1
+        if local_count > max_count:
+            max_count = local_count
+        ret_str_arr.append(curr_letter)
+        ret_str_arr.append(str(local_count))
+        i += 1
 
+    if max_count == 1:
+        return string
+    return ret_str.join(ret_str_arr)
+
+        
+
+
+print(compress_string("aabccccaaa"))
+print(compress_string("abca"))

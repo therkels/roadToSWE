@@ -43,3 +43,9 @@ class Test(unittest.TestCase):
         self.assertTrue(test_tup.is_one_away(test_tup))
         test_tup = ("pale","bake")
         self.assertFalse(test_tup.is_one_away(test_tup))
+
+    def test_string_compression(self):
+        test_string = "aabccccaaa"
+        self.assertEquals("a2blc5a3", aas.compress_string(test_string))
+        test_string = "abca"
+        self.assertEquals("abca", aas.compress_string(test_string))
