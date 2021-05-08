@@ -33,3 +33,13 @@ class Test(unittest.TestCase):
         self.assertFalse(aas.is_palindrome(test_str))
         test_str = "as"
         self.assertFalse(aas.is_palindrome(test_str))
+    
+    def test_is_one_away(self):
+        test_tup = ("pale","ple")
+        self.assertTrue(test_tup.is_one_away(test_tup))
+        test_tup = ("pales","pale")
+        self.assertTrue(test_tup.is_one_away(test_tup))
+        test_tup = ("pale","bale")
+        self.assertTrue(test_tup.is_one_away(test_tup))
+        test_tup = ("pale","bake")
+        self.assertFalse(test_tup.is_one_away(test_tup))

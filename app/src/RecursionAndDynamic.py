@@ -5,4 +5,4 @@ def triple_step_recurse(n):
         return 1
     return triple_step_recurse(n-1) + triple_step_recurse(n-2) + triple_step_recurse(n-3)
 
-print(triple_step_recurse(20))
+print(triple_step_recurse(25))

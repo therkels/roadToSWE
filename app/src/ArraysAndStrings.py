@@ -82,3 +82,23 @@ def is_palindrome(string):
             odd_even["odd"] += 1
 
     return odd_even["odd"] <= 1
+
+def is_one_away(string_tup):
+    if string_tup[0] == string_tup[1]:
+        return True
+    
+    set_1 = set()
+    set_2 = set()
+
+    for char in string_tup[0]:
+        set_1.add(char)
+
+    for char in string_tup[1]:
+        set_2.add(char)
+    
+    print(set_1 ^ set_2)
+    return len(set_1 ^ set_2)//2 < 2
+
+
+print(is_one_away(("ale","bale")))
+
